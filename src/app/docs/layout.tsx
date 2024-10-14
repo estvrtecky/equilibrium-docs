@@ -1,6 +1,6 @@
 // File: src/app/docs/layout.tsx
 
-import SideBar from "./SideBar";
+import DocsNav from "./DocsNav";
 
 export default function DocsLayout({
   children,
@@ -9,7 +9,7 @@ export default function DocsLayout({
 }) {
   return (
     <div>
-      <SideBar />
+      <DocsNav />
       <main>{children}</main>
     </div>
   );
