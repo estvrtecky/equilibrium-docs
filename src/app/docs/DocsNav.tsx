@@ -6,7 +6,9 @@ import Link from "next/link";
 
 export default function DocsNav() {
   const docsPath = path.join(process.cwd(), "src/app/docs");
-  const categories = ["introduction", "components"];
+  const docsConfigPath = path.join(docsPath, "docs-config.json");
+  const docsConfig = JSON.parse(fs.readFileSync(docsConfigPath, "utf-8"));
+  const { categories } = docsConfig;
 
   // Function to get all pages within a specified category
   const getPages = (category: string) => {
@@ -22,7 +24,7 @@ export default function DocsNav() {
     <aside>
       <nav>
         <ul>
-          {categories.map((category) => (
+          {categories.map((category: string) => (
             <li key={category}>
               <h5>{category}</h5>
               <ul>
