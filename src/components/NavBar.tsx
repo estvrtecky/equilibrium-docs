@@ -4,7 +4,7 @@
 
 import Link from "next/link";
 import { useEffect } from "react";
-import { Menu } from "equilibrium.js/dist/js/equilibrium.js";
+import { Menu } from "equilibrium.js";
 
 export default function NavBar() {
   useEffect(() => {
